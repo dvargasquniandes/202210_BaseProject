@@ -1,1 +1,24 @@
-<h1>Hello</h1>
+<div class="main">
+    <h1 class="title">TuSegundazo.com</h1>
+    <div class="banner">
+        <img class="banner_img" src="assets/banner.svg" alt="banner">
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Linea</th>
+            <th scope="col">Modelo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehicle of vehicles">
+                <th scope="row">{{ vehicle.id }}</th>
+                <td>{{ vehicle.marca }}</td>
+                <td>{{ vehicle.linea }}</td>
+                <td>{{ vehicle.modelo }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

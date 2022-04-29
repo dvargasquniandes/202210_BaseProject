@@ -1,0 +1,26 @@
+.main {
+    padding: 0 3em;
+}
+
+.title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: 'Jaldi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 61px;
+    color: #000000;
+}
+
+.banner {
+    text-align: center;
+}
+
+.banner_img {
+    width: 1244px;
+    height: 323px;
+}
+
+.table {
+    width: 792px;
+}
