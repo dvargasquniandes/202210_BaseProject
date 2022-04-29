@@ -21,4 +21,7 @@
             </tr>
         </tbody>
     </table>
+    <div *ngFor="let item of brandsCounter">
+        <h3>Total {{ item.brand }}: {{ item.counter }}</h3>
+    </div>
 </div>

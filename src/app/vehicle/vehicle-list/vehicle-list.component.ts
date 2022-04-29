@@ -10,18 +10,27 @@ import { VehicleService } from '../vehicle.service';
 })
 export class VehicleListComponent implements OnInit {
 
-  vehicles:Array<Vehicle> = []
+  vehicles: Array<Vehicle> = []
+  brandsCounter: { brand: string, counter: number}[] = []
 
   constructor(private vehicleService: VehicleService) { }
 
-  getMuseums():void{
+  getVehicles(): void {
     this.vehicleService.getVehicles().subscribe((vehicles)=>{
       this.vehicles = vehicles;
+      this.brandsCounter = this.countBrands();
     })
   }
 
+  countBrands(): { brand: string, counter: number}[] {
+    const brandsGroup = this.vehicles.reduce((acc, vehicle) =>  
+      ({ ...acc, [vehicle.marca]: acc[vehicle.marca] ? acc[vehicle.marca] + 1 : 1 })
+    , {} as Record<string, number>);
+    return Object.keys(brandsGroup).map(brand => ({ brand, counter: brandsGroup[brand] }))
+  }
+
   ngOnInit(): void {
-    this.getMuseums();
+    this.getVehicles();
   }
 
 }
